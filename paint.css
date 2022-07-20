@@ -1,0 +1,90 @@
+.home-title {
+    padding-top: 1%;
+    color: darkorchid;
+}
+.home-title:hover {
+    color: darkmagenta;
+}
+
+
+.links {
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+    border-radius: 10%;
+    background-color: darkorchid;
+}
+
+.links:hover {
+    color: darkorchid;
+    background-color: white;
+    /* font-size: 100%; */
+}
+
+h2 {
+    line-gap-override: 10%;
+}
+
+.project {
+    width: 60%;
+    border-color: transparent;
+    border-bottom: dashed;
+    border-bottom-color: lightgray;
+    border-width: 1%;
+    padding-bottom: 2%;
+}
+
+.project-des {
+    line-gap-override: 20%;
+}
+
+.memory_square {
+    display: inline-block;
+    margin: 0%;
+    background-color: white;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 0.1px;
+    width: 15px;
+    height: 15px;
+}
+
+.purpo {
+    color: indigo;
+}
+
+.spacer {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: darkorchid;
+    height: 5px;
+}
+
+.spacer-top {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    background-color: darkorchid;
+    height: 5px;
+}
+
+.inline {
+    display: inline;
+}
+
+#canvas {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: block;
+    border: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    border-radius: 1%;
+}
+
+.brush {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 0%;
+}
