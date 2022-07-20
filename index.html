@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cch.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+        <title>htmlPaint</title>
+    </head>
+    <body>
+
+<div id="paint">
+
+            <h1 style="font-family: 'Rubik Moonrocks'; color: purple;">html paint</h1>
+
+            <canvas onmousedown="clicked(1); draw(event)" onmouseup="clicked(0);" onmousemove="draw(event);" id="canvas" width="1000" height="600"></canvas>
+
+            <button class="brush" id="black" style="background-color: black" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="white" style="background-color: white" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="red" style="background-color: red" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="orangered" style="background-color: orangered" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="orange" style="background-color: orange" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="yellow" style="background-color: yellow" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="greenyellow" style="background-color: greenyellow" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="lightgreen" style="background-color: lightgreen" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="green" style="background-color: green" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="turquoise" style="background-color: turquoise" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="skyblue" style="background-color: skyblue" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="blue" style="background-color: blue" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="blueviolet" style="background-color: blueviolet" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="purple" style="background-color: purple" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="indigo" style="background-color: indigo" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="pink" style="background-color: pink" onclick="changeColor(this.id);"></button>
+            <button class="brush" id="hotpink" style="background-color: hotpink" onclick="changeColor(this.id);"></button>
+            <button class="links" onclick="clearCvs();">CLEAR</button>
+
+            <script>
+            var clickedB = false;
+            var c = document.getElementById("canvas");
+            var brushColor = "FF0000"
+
+            console.log("window size: " + window.innerHeight + ", " + window.innerWidth);
+
+            var ctx = canvas.getContext("2d");
+
+            function clicked(n) {
+                if (n==1)
+                    clickedB = true;
+                else
+                    clickedB = false;
+            }
+
+            function changeColor(bc) {
+                brushColor = bc;
+            }
+
+            function clearCvs() {
+                ctx.clearRect(0, 0, 1000, 600);
+            }
+
+            function drawPixel(x, y) {
+                //ctx.fillStyle= "FF0000";
+                ctx.beginPath();
+                ctx.strokeStyle = brushColor;
+                ctx.moveTo(x, y);
+                ctx.lineTo(x, y+1);
+                ctx.stroke();
+                // ctx.fillStyle = color of pixel x,y+1
+
+                ctx.moveTo(x, y+2);
+                ctx.lineTo(x, y+1);
+                ctx.stroke();
+            }
+
+            function draw(event) {
+
+                if (clickedB == true) {
+
+                    var x = event.offsetX;
+                    var y = event.offsetY;
+                    drawPixel(x, y)
+                }
+            }
+            </script>
+        </div>
+
+    </body>
+</html>
